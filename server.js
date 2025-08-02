@@ -16,13 +16,13 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/news', async (req, res) => {
-    const url = `https://gnews.io/api/v4/search?q=gaming OR "underrated music"&lang=en&max=20&apikey=${NEWS_API_KEY}`;
+    const url = `https://gnews.io/api/v4/search?q=gaming OR "indie music" OR "comics"&lang=en&max=20&apikey=${NEWS_API_KEY}`;
 
     try {
         const response = await fetch(url);
         const data = await response.json();
 1
-        const filtered = data.articles;
+        const filtered = data.articles.slice(0,9);
 
         res.json(filtered);
     } catch(error) {

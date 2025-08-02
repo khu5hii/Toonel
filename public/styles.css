@@ -155,3 +155,28 @@ body {
     }
 }
 
+@media screen and (max-width: 320px) {
+    .grid {
+        justify-content: center;
+        
+    }
+
+    .navbar {
+        margin: 0 auto 10px;
+    }
+}
+
+@media screen and (max-width: 308px) {
+    .grid {
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .navbar {
+        margin: 0 auto 10px;
+    }
+
+    .navbar h2 {
+        font-size: 1.2em;
+    }
+}

@@ -21,7 +21,6 @@ app.get('/api/news', async (req, res) => {
     try {
         const response = await fetch(url);
         const data = await response.json();
-1
         const filtered = data.articles.slice(0,9);
 
         res.json(filtered);
@@ -31,6 +30,6 @@ app.get('/api/news', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
